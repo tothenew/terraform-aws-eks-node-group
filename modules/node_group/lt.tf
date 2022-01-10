@@ -11,7 +11,7 @@ resource "aws_launch_template" "ng_eks_launch_template" {
     }
   }
 
-  image_id = "ami-002539dd2c532d0a5"
+  image_id = "ami-0cb0ebf0188779ab1"
   #instance_type = "t3.medium"
   user_data = base64encode(templatefile("${path.module}/user-data-apache.sh", {}))
   #user_data = "${file("user-data-apache.sh")}"
