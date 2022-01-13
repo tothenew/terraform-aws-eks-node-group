@@ -1,26 +1,36 @@
+locals {
+    common_tags = {
+  ENV = "${terraform.workspace}"
+  ManagedBy = "Terraform"
+    }
+}
 resource "aws_launch_template" "ng_eks_launch_template" {
   name = "ng_eks_launch_template"
-
-  vpc_security_group_ids  = ["sg-030888ba8b196acc4", "sg-024ac5730477138b4"]
+  vpc_security_group_ids  = var.vpc_security_group_ids
   disable_api_termination = false
   block_device_mappings {
     device_name = "/dev/xvda"
     ebs {
-      volume_size = 20
-      volume_type = "gp2"
+      volume_size = var.volume_size
+      volume_type = var.volume_type
     }
   }
 
-  image_id = "ami-0cb0ebf0188779ab1"
-  #instance_type = "t3.medium"
+  image_id = var.ami_id
   user_data = base64encode(templatefile("${path.module}/user-data-apache.sh", {}))
-  #user_data = "${file("user-data-apache.sh")}"
 
   tag_specifications {
     resource_type = "instance"
 
-    tags = {
-      Name = "EKS-MANAGED-NODE"
+  tags = merge(
+    local.common_tags,
+    {
+      "Name" = var.Name
     }
+  )   
+     
+     
+     }
+  
   }
-}
+
