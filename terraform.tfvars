@@ -1,0 +1,1 @@
+#node_role_arn = ["arn:aws:iam::230914246429:role/user-nodegroup"]
