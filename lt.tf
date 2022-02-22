@@ -1,8 +1,8 @@
 resource "aws_launch_template" "ng_eks_launch_template" {
-  name = "ng_eks_launch_template"
+  name = var.name
 
-  vpc_security_group_ids  = ["sg-030888ba8b196acc4", "sg-024ac5730477138b4"]
-  disable_api_termination = false
+  vpc_security_group_ids  = var.vpc_security_group_ids
+  disable_api_termination = var.disable_api_termination
   block_device_mappings {
     device_name = "/dev/xvda"
     ebs {
@@ -11,10 +11,10 @@ resource "aws_launch_template" "ng_eks_launch_template" {
     }
   }
 
-  image_id = "ami-0cb0ebf0188779ab1"
-  #instance_type = "t3.medium"
+  image_id  = var.image_id
   user_data = base64encode(templatefile("${path.module}/user-data-apache.sh", {}))
   #user_data = "${file("user-data-apache.sh")}"
+  key_name = var.key_name
 
   tag_specifications {
     resource_type = "instance"
