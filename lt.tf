@@ -1,13 +1,13 @@
 resource "aws_launch_template" "ng_eks_launch_template" {
-  name = var.name
+  name = var.lt_name
 
   vpc_security_group_ids  = var.vpc_security_group_ids
   disable_api_termination = var.disable_api_termination
   block_device_mappings {
     device_name = "/dev/xvda"
     ebs {
-      volume_size = 20
-      volume_type = "gp2"
+      volume_size = var.volume_size
+      volume_type = var.volume_type
     }
   }
 
@@ -20,7 +20,7 @@ resource "aws_launch_template" "ng_eks_launch_template" {
     resource_type = "instance"
 
     tags = {
-      Name = "EKS-MANAGED-NODE"
+      Name = "var.Name"
     }
   }
 }

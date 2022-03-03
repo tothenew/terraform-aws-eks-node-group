@@ -14,7 +14,7 @@ variable "node_role_arn" {
 
 #Launch Template Variables
 
-variable "name" {
+variable "lt_name" {
   description = "The name of the launch template. If blank, Terraform will auto-generate a unique name."
   type        = string
 }
@@ -37,3 +37,58 @@ variable "key_name" {
   description = "SSH Key to access Instances."
   type        = string
 }
+
+variable volume_size {
+  description = "Size of worker node"
+  default     = "20"
+}
+
+variable volume_type {
+  default = "gp2"
+}
+
+
+
+
+
+
+###new
+variable "Name" {
+    default = "EKS-MANAGED-NODE"
+}
+
+########Node Group
+variable "cluster_name" {
+  
+}
+
+variable "node_group_name" {
+
+}
+
+variable "subnet_ids" {
+    type = list
+    default = ["subnet-055eb434f841c1ec7", "subnet-082d1b94bacae6504", "subnet-05dec220d2885f6dd"]
+}
+
+variable "instance_types" {
+    type = list
+    default = ["t3.medium", "t2.medium"]
+}
+
+
+variable "desired_size" {
+  default = 2 
+
+}
+
+variable "max_size" {
+ default = 4
+}
+
+variable "min_size" {
+
+  default = 1
+}
+
+
