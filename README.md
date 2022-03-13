@@ -15,10 +15,6 @@ Before this module can be used on a project, you must ensure that the following 
 - [Terraform](https://www.terraform.io/downloads.html) 1.0.x
 - [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v3.79.0
 
-### Configure a Service Account
-In order to execute this module you must have a Service Account with the
-following project roles:
-- roles/owner
 
 ## Install
 
@@ -30,6 +26,13 @@ Be sure you have the correct Terraform version (1.0.x), you can choose the binar
 The project has the following folders and files:
 
 - /: Root folder
+- /main.tf: Main file for this module, contains all the resources to create
+- /provider.tf: File which will store the information about provider
+- /variables.tf: All the variables for the module
+- /output.tf: The outputs of the module
+- /README.md: This file
+- /lt.tf: Launch template configuration
+- terrafrom.tfvars: Varaible files
  
 ## Usage
 
