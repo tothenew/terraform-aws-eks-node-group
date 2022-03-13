@@ -60,5 +60,16 @@ The project has the following folders and files:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-|  |  | `string` | n/a | yes |
-|  |  | `string` | n/a | yes |
+| lt_name |  | `string` | n/a | yes |
+| vpc_security_group_ids |  | `string` | n/a | yes |
+| disable_api_termination |  | `string` | n/a | yes |
+| vpc_security_group_ids |  | `string` | n/a | yes |
+| image_id |  | `string` | n/a | yes |
+| key_name |  | `string` | n/a | yes |
+| cluster_name |  | `string` | n/a | yes |
+| node_group_name |  | `string` | n/a | yes |
+| subnet_ids |  | `string` | n/a | yes |
+| instance_types |  | `string` | n/a | yes |
+| desired_size |  | `string` | n/a | yes |
+| max_size |  | `string` | n/a | yes |
+| min_size |  | `string` | n/a | yes |
