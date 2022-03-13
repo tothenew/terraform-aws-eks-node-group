@@ -31,9 +31,7 @@ The project has the following folders and files:
 
 - /: Root folder
  
-
-  
-  ## Usage
+## Usage
 
 ## Step 1: Clone the repo
 ## Step 2: Then perform the following commands in the root folder:
