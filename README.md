@@ -13,7 +13,7 @@ Before this module can be used on a project, you must ensure that the following 
 ### Software Dependencies
 ### Terraform
 - [Terraform](https://www.terraform.io/downloads.html) 1.0.x
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v3.79.0
+
 
 
 ## Install
