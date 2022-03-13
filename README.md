@@ -37,25 +37,23 @@ The project has the following folders and files:
 ## Step 2: Then perform the following commands in the root folder:
 
 
-```Terraform
-pip install foobar
+
+
+```
+** - terraform init` to get the plugins**
 ```
 
 ```
-- terraform init` to get the plugins
-```
+**- terraform plan --var-file="terraform.tfvars"` to see the infrastructure plan
+**```
 
 ```
-- terraform plan --var-file="terraform.tfvars"` to see the infrastructure plan
-```
+**- terraform apply --var-file="terraform.tfvars"` to apply the infrastructure build
+**```
 
 ```
-- terraform apply --var-file="terraform.tfvars"` to apply the infrastructure build
-```
-
-```
-- terraform destroy --var-file="terraform.tfvars"` to destroy the built infrastructure
-```
+**- terraform destroy --var-file="terraform.tfvars"` to destroy the built infrastructure
+**```
 
 ## Providers
 | Name | Version |
