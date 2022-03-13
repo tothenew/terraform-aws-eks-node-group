@@ -35,6 +35,12 @@ The project has the following folders and files:
 
 ## Step 1: Clone the repo
 ## Step 2: Then perform the following commands in the root folder:
+
+
+```Terraform
+pip install foobar
+```
+
 ```
 - terraform init` to get the plugins
 ```
