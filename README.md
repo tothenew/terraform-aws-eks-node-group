@@ -52,3 +52,10 @@ The project has the following folders and files:
 |------|------|
 |  | resource |
 |  | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+|  |  | `string` | n/a | yes |
+|  |  | `string` | n/a | yes |
