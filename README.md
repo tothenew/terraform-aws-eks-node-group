@@ -50,8 +50,11 @@ The project has the following folders and files:
 
 | Name | Type |
 |------|------|
-|  | resource |
-|  | resource |
+| aws_eks_node_group  | resource |
+| aws_iam_role | resource |
+| aws_iam_role_policy_attachment | resource |
+| aws_launch_template | resource |
+
 
 ## Inputs
 
