@@ -38,57 +38,62 @@ variable "key_name" {
   type        = string
 }
 
-variable volume_size {
+variable "volume_size" {
   description = "Size of worker node"
   default     = "20"
 }
 
-variable volume_type {
-  default = "gp2"
+variable "volume_type" {
+  description = "EBS Volume type of worker node"
+  default     = "gp2"
 }
 
-
-
-
-
-
-###new
 variable "Name" {
-    default = "EKS-MANAGED-NODE"
+  default = "EKS-MANAGED-NODE"
 }
 
-########Node Group
+#Node Group
+
 variable "cluster_name" {
-  
+  description = "The name of the EKS cluster"
+  type        = string
 }
 
 variable "node_group_name" {
-
+  description = "The name of the EKS cluster"
+  type        = string
 }
 
 variable "subnet_ids" {
-    type = list
-    default = ["subnet-055eb434f841c1ec7", "subnet-082d1b94bacae6504", "subnet-05dec220d2885f6dd"]
+  description = "A list of subnet IDs to launch resources in"
+  type        = list(string)
+  #type = list
+  default = ["subnet-055eb434f841c1ec7", "subnet-082d1b94bacae6504", "subnet-05dec220d2885f6dd"]
 }
 
 variable "instance_types" {
-    type = list
-    default = ["t3.medium", "t2.medium"]
+  description = "Instance types to use for this node group."
+  type        = list(string)
+  #type = list
+  default = ["t3.medium", "t2.medium"]
 }
 
 
 variable "desired_size" {
-  default = 2 
+  description = "Initial desired number of worker nodes (external changes ignored)"
+  type        = number
+  default     = 2
 
 }
 
 variable "max_size" {
- default = 4
+  description = "Maximum number of worker nodes"
+  type        = number
+  default     = 4
 }
 
 variable "min_size" {
-
-  default = 1
+  description = "Minimum number of worker nodes"
+  type        = number
+  default     = 1
 }
-
-
