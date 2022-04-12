@@ -1,3 +1,13 @@
+variable "environment" {
+  description = "Environment Tag value"
+  type        = string
+}
+
+variable "project" {
+  description = "Environment Tag value"
+  type        = string
+}
+
 #IAM Variables
 
 variable "node_role_arn" {

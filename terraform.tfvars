@@ -1,3 +1,6 @@
+environment = "testing"
+project     = "open source contribution"
+
 #node_role_arn = ["arn:aws:iam::230914246429:role/user-nodegroup"]
 lt_name                 = "ng_eks_launch_template"
 vpc_security_group_ids  = ["sg-0f4b1084f64db50c5", "sg-024ac5730477138b4"]
