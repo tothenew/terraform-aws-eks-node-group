@@ -2,12 +2,13 @@
 
 This Terraform code snippet is used to launch a node group.
 
-## Requirements
+## Prerequisite
 
 Before this module can be used on a project, you must ensure that the following pre-requisites are fulfilled:
 
 1. Terraform is [installed](#software-dependencies) on the machine where Terraform is executed.
 2. Make sure you had access to launch the resources in aws.
+3. EKS Cluster needs to be created first.
 
 
 ### Software Dependencies
@@ -25,13 +26,12 @@ Be sure you have the correct Terraform version (1.0.x), you can choose the binar
 ## File structure
 The project has the following folders and files:
 
-- /: Root folder
-- /main.tf: Main file for this module, contains all the resources to create
-- /provider.tf: File which will store the information about provider
-- /variables.tf: All the variables for the module
-- /output.tf: The outputs of the module
-- /README.md: This file
-- /lt.tf: Launch template configuration
+- main.tf: Main file for this module, contains all the resources to create
+- provider.tf: File which will store the information about provider
+- variables.tf: All the variables for the module
+- output.tf: The outputs of the module
+- README.md: This file
+- lt.tf: Launch template configuration
 - terrafrom.tfvars: Varaible files
  
 ## Usage
@@ -92,14 +92,14 @@ Note: We will require the following values in order to execute the code successf
 | lt_name |  | `string` | n/a | yes |
 | vpc_security_group_ids |  | `list(string)` | n/a | yes |
 | disable_api_termination |  | `bool` | n/a | yes |
-| image_id |  | `string` | n/a | yes |
+| image_id |  | `string` | n/a | no |
 | key_name |  | `string` | n/a | yes |
-| volume_size |  | `string` | n/a | yes |
-| volume_type |  | `string` | n/a | yes |
+| volume_size |  | `string` | n/a | no |
+| volume_type |  | `string` | n/a | no |
 | cluster_name |  | `string` | n/a | yes |
 | node_group_name |  | `string` | n/a | yes |
 | subnet_ids |  | `list(string)` | n/a | yes |
-| instance_types |  | `list(string)` | n/a | yes |
+| instance_types |  | `list(string)` | n/a | no |
 | desired_size |  | `number` | n/a | yes |
-| max_size |  | `number` | n/a | yes |
-| min_size |  | `number` | n/a | yes |
+| max_size |  | `number` | n/a | no |
+| min_size |  | `number` | n/a | no |
