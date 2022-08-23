@@ -36,6 +36,26 @@ The project has the following folders and files:
  
 ## Usage
 
+```
+module "eks_cluster_nodegroup" {
+  source = "git@github.com:IntelliGrape/terraform-aws-eks-node-group.git"
+  environment = "testing"
+  project     = "open source contribution"
+  lt_name                 = "ng_eks_launch_template"
+  vpc_security_group_ids  = ["sg-0f4b1084f64db50c5", "sg-024ac5730477138b4"]
+  disable_api_termination = false
+  image_id                = "ami-0cb0ebf0188779ab1"
+  key_name                = "gocd_user"
+  cluster_name    = "mycluster"
+  node_group_name = "myfirstnodegroup"
+  subnet_ids      = ["subnet-055eb434f841c1ec7", "subnet-082d1b94bacae6504", "subnet-05dec220d2885f6dd"]
+  instance_types  = ["t3.medium", "t2.medium"]
+  desired_size    = 2
+  max_size        = 4
+  min_size        = 1
+}
+```
+
 ### Step 1: Clone the repo
 ### Step 2: Then perform the following commands in the root folder:
 
