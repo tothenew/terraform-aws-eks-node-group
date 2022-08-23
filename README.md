@@ -72,7 +72,7 @@ Note: We will require the following values in order to execute the code successf
 ## Providers
 | Name | Version |
 |------|---------|
-| aws  | 4.5.0 |
+| aws  | 3.72.0 |
 
 ## Resources
 
@@ -100,6 +100,13 @@ Note: We will require the following values in order to execute the code successf
 | node_group_name |  | `string` | n/a | yes |
 | subnet_ids |  | `list(string)` | n/a | yes |
 | instance_types |  | `list(string)` | n/a | no |
-| desired_size |  | `number` | n/a | yes |
+| desired_size |  | `number` | n/a | no |
 | max_size |  | `number` | n/a | no |
 | min_size |  | `number` | n/a | no |
+
+## Inputs
+
+| Name | Description | 
+|------|-------------|
+| node_role_arn |  | 
+
