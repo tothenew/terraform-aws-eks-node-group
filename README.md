@@ -88,25 +88,25 @@ Note: We will require the following values in order to execute the code successf
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| node_role_arn |  | `list(string)` | n/a | yes |
-| lt_name |  | `string` | n/a | yes |
-| vpc_security_group_ids |  | `list(string)` | n/a | yes |
-| disable_api_termination |  | `bool` | n/a | yes |
-| image_id |  | `string` | n/a | no |
-| key_name |  | `string` | n/a | yes |
-| volume_size |  | `string` | n/a | no |
-| volume_type |  | `string` | n/a | no |
-| cluster_name |  | `string` | n/a | yes |
-| node_group_name |  | `string` | n/a | yes |
-| subnet_ids |  | `list(string)` | n/a | yes |
-| instance_types |  | `list(string)` | n/a | no |
-| desired_size |  | `number` | n/a | no |
-| max_size |  | `number` | n/a | no |
-| min_size |  | `number` | n/a | no |
+| node_role_arn | Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Node Group | `list(string)` | n/a | yes |
+| lt_name | The name of Launch template | `string` | n/a | yes |
+| vpc_security_group_ids | List of security group IDs to associate the Node Group with   | `list(string)` | n/a | yes |
+| disable_api_termination | For enabeling EC2 Termination Protection, if it is true | `bool` | n/a | no |
+| image_id | AMI id for node group | `string` | n/a | no |
+| key_name | Key name for node group associated instance | `string` | n/a | yes |
+| volume_size | Disk size in GiB for worker nodes  | `string` | n/a | no |
+| volume_type | EBS Volume type of worker node | `string` | n/a | no |
+| cluster_name | Name of the EKS Cluster | `string` | n/a | yes |
+| node_group_name | Name of the EKS Node Group. If omitted, Terraform will assign a random, unique name | `string` | n/a | yes |
+| subnet_ids | Identifiers of EC2 Subnets to associate with the EKS Node Group.  | `list(string)` | n/a | yes |
+| instance_types | List of instance types associated with the EKS Node Group | `list(string)` | n/a | no |
+| desired_size | Desired number of worker nodes | `number` | n/a | no |
+| max_size | Maximum number of worker nodes | `number` | n/a | no |
+| min_size | Minimum number of worker nodes | `number` | n/a | no |
 
-## Inputs
+## Output
 
 | Name | Description | 
 |------|-------------|
-| node_role_arn |  | 
+| node_role_arn | Amazon Resource Name (ARN) of the EKS Node Group | 
 
