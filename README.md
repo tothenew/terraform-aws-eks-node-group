@@ -91,18 +91,18 @@ Note: We will require the following values in order to execute the code successf
 | node_role_arn | Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Node Group | `list(string)` | n/a | yes |
 | lt_name | The name of Launch template | `string` | n/a | yes |
 | vpc_security_group_ids | List of security group IDs to associate the Node Group with   | `list(string)` | n/a | yes |
-| disable_api_termination | For enabeling EC2 Termination Protection, if it is true | `bool` | n/a | no |
+| disable_api_termination | For enabeling EC2 Termination Protection, if it is true | `bool` | false | no |
 | image_id | AMI id for node group | `string` | n/a | no |
 | key_name | Key name for node group associated instance | `string` | n/a | yes |
-| volume_size | Disk size in GiB for worker nodes  | `string` | n/a | no |
-| volume_type | EBS Volume type of worker node | `string` | n/a | no |
+| volume_size | Disk size in GiB for worker nodes  | `string` | 20 | no |
+| volume_type | EBS Volume type of worker node | `string` | gp2 | no |
 | cluster_name | Name of the EKS Cluster | `string` | n/a | yes |
 | node_group_name | Name of the EKS Node Group. If omitted, Terraform will assign a random, unique name | `string` | n/a | yes |
 | subnet_ids | Identifiers of EC2 Subnets to associate with the EKS Node Group.  | `list(string)` | n/a | yes |
-| instance_types | List of instance types associated with the EKS Node Group | `list(string)` | n/a | no |
-| desired_size | Desired number of worker nodes | `number` | n/a | no |
-| max_size | Maximum number of worker nodes | `number` | n/a | no |
-| min_size | Minimum number of worker nodes | `number` | n/a | no |
+| instance_types | List of instance types associated with the EKS Node Group | `list(string)` | ["t3.medium", "t2.medium"] | no |
+| desired_size | Desired number of worker nodes | `number` | 2 | no |
+| max_size | Maximum number of worker nodes | `number` | 4 | no |
+| min_size | Minimum number of worker nodes | `number` | 1 | no |
 
 ## Output
 
