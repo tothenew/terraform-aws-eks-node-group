@@ -17,10 +17,8 @@ resource "aws_launch_template" "ng_eks_launch_template" {
       volume_type = var.volume_type
     }
   }
-
   image_id  = var.image_id
       user_data = base64encode(data.template_file.launch_template_user_data.rendered)
-  #user_data = "${file("user-data-apache.sh")}"
   key_name = var.key_name
 
   tag_specifications {
