@@ -14,7 +14,7 @@ resource "aws_eks_node_group" "terraform_node_group" {
     max_size     = var.max_size
     min_size     = var.min_size
   }
-
+    tags = var.tags
   launch_template {
     name    = aws_launch_template.ng_eks_launch_template.name
     version = aws_launch_template.ng_eks_launch_template.latest_version

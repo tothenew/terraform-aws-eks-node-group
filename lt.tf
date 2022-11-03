@@ -1,3 +1,10 @@
+data "template_file" "launch_template_user_data" {
+    template = file("${path.module}/user-data-apache.sh")
+    vars = {
+        cluster_name = var.cluster_name
+    }
+}
+
 resource "aws_launch_template" "ng_eks_launch_template" {
   name = var.lt_name
 
@@ -12,7 +19,7 @@ resource "aws_launch_template" "ng_eks_launch_template" {
   }
 
   image_id  = var.image_id
-  user_data = base64encode(templatefile("${path.module}/user-data-apache.sh", {}))
+      user_data = base64encode(data.template_file.launch_template_user_data.rendered)
   #user_data = "${file("user-data-apache.sh")}"
   key_name = var.key_name
 
@@ -20,7 +27,7 @@ resource "aws_launch_template" "ng_eks_launch_template" {
     resource_type = "instance"
 
     tags = {
-      Name = "var.Name"
+      Name = var.cluster_name
     }
   }
 }

@@ -1,2 +1,2 @@
 #! /bin/bash
-/etc/eks/bootstrap.sh 'testing-cluster'
+/etc/eks/bootstrap.sh 'non-prod-forte-eks-cluster'
