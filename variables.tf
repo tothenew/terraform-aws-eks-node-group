@@ -77,8 +77,6 @@ variable "node_group_name" {
 variable "subnet_ids" {
   description = "A list of subnet IDs to launch resources in"
   type        = list(string)
-  #type = list
-  default = ["subnet-055eb434f841c1ec7", "subnet-082d1b94bacae6504", "subnet-05dec220d2885f6dd"]
 }
 
 variable "instance_types" {
@@ -106,4 +104,9 @@ variable "min_size" {
   description = "Minimum number of worker nodes"
   type        = number
   default     = 1
+}
+
+variable "tags" {
+    description = "Tags"
+    type        = map(string)
 }

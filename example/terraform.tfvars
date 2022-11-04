@@ -1,20 +1,22 @@
-environment = "testing"
-project     = "open source contribution"
+region              = "us-east-1"
+profile             = "tothenew"
+project_name_prefix = "tothenew"
+common_tags = {
+    "Feature" : "application"
+}
+project = "tothenew"
 
-#node_role_arn = ["arn:aws:iam::230914246429:role/user-nodegroup"]
-lt_name                 = "ng_eks_launch_template"
-vpc_security_group_ids  = ["sg-0f4b1084f64db50c5", "sg-024ac5730477138b4"]
+cluster_name            = "eks-cluster"
 disable_api_termination = false
-image_id                = "ami-0cb0ebf0188779ab1"
-key_name                = "gocd_user"
-
-
-##node group
-
-cluster_name    = "mycluster"
-node_group_name = "myfirstnodegroup"
-subnet_ids      = ["subnet-055eb434f841c1ec7", "subnet-082d1b94bacae6504", "subnet-05dec220d2885f6dd"]
-instance_types  = ["t3.medium", "t2.medium"]
-desired_size    = 2
-max_size        = 4
-min_size        = 1
+image_id                = ""
+key_name                = "tothenew"
+node_group_name         = "eks_node_group"
+instance_types          = ["t3.medium", "t2.medium"]
+max_size                = 1
+desired_size            = 1
+min_size                = 1
+create_eks_iam_role     = false
+lt_name                 = "lt"
+volume_size             = "50"
+volume_type             = "gp3"
+node_role_arn           = [""]
