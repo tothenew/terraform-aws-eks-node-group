@@ -1,5 +1,5 @@
 data "template_file" "launch_template_user_data" {
-  template = file("${path.module}/user-data-apache.sh")
+  #  template = file("${path.module}/user-data-apache.sh")
   vars = {
     cluster_name = var.cluster_name
   }
