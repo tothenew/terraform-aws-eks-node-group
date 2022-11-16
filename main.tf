@@ -6,14 +6,14 @@ resource "aws_eks_node_group" "terraform_node_group" {
   cluster_name    = var.cluster_name
   node_group_name = var.node_group_name
   node_role_arn   = local.create_role ? aws_iam_role.eks-iam-ng[0].arn : var.node_role_arn[0]
-  subnet_ids     = var.subnet_ids
-  instance_types = var.instance_types
+  subnet_ids      = var.subnet_ids
+  instance_types  = var.instance_types
   scaling_config {
     desired_size = var.desired_size
     max_size     = var.max_size
     min_size     = var.min_size
   }
-    tags = var.tags
+  tags = var.tags
   launch_template {
     name    = aws_launch_template.ng_eks_launch_template.name
     version = aws_launch_template.ng_eks_launch_template.latest_version

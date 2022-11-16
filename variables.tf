@@ -107,6 +107,6 @@ variable "min_size" {
 }
 
 variable "tags" {
-    description = "Tags"
-    type        = map(string)
+  description = "Tags"
+  type        = map(string)
 }
