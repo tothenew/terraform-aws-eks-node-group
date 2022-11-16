@@ -2,7 +2,7 @@ region              = "us-east-1"
 profile             = "tothenew"
 project_name_prefix = "tothenew"
 common_tags = {
-    "Feature" : "application"
+  "Feature" : "application"
 }
 project = "tothenew"
 
